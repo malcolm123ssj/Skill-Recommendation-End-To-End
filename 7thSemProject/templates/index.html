@@ -1,0 +1,42 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <div class="container">
+
+            <header>
+              <h2><a href="#"><i class="ion-plane"></i>Skill Recommender</a></h2>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="/" title="Home">Home</a>
+                  </li>
+                  <li>
+                    <a href="/about" title="About">About</a>
+                  </li>
+                </ul>
+              </nav>
+            </header>
+          
+            <div class="cover">
+              <h1>Find what to learn next! Get started by uploading your resume!</h1>
+              <form class="flex-form" action="/handleUpload" method="POST" enctype="multipart/form-data">
+                <input type="file" class="fileupload" name="photo" accept="application/pdf" >
+                <input type="submit" value="Get Recommendations!">
+              </form>
+              <ul class="results" style="text-align: center;">
+                {% for recommendation in answer %}
+                  <li class="collection-item" style="display: inline-block; background-color: #ef3f5a; color: #fff; font-size: 15px; font-weight: bold; margin: 5px; padding: 20px; border-radius: 10%;">{{ recommendation }}</li>
+                {% endfor %}
+              </ul>
+              <div id="madeby">
+                <span>
+                  Photo by Malcolm
+                </span>
+              </div>
+            </div>
+          
+          </div>
+    </body>
+</html>
