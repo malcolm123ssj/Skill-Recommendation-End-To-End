@@ -15,7 +15,6 @@ protobuf==3.14.0
 pycryptodome==3.9.9
 pylint==2.6.0
 PyQt5==5.15.2
-PyQt5-sip==4.19.24
 scipy==1.5.4
 six==1.15.0
 smart-open==4.0.1
