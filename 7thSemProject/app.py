@@ -43,11 +43,11 @@ def handleFileUpload():
     if 'photo' in request.files:
         photo = request.files['photo']
         if photo.filename != '':            
-            photo.save(os.path.join("/Users/malcolm/Desktop/uploads", photo.filename))
+            photo.save(os.path.join("/Users/malcolm/Desktop/FinalProjectEndToEnd/7thSemProject/uploads", photo.filename))
         else:
             return render_template("index.html", message="Upload your resume first!")
 
-    path = "/Users/malcolm/Desktop/uploads/" + str(photo.filename)
+    path = "/Users/malcolm/Desktop/FinalProjectEndToEnd/7thSemProject/uploads/" + str(photo.filename)
     text = convertPDFToText(path)
     text = text.replace('|',',')
     text = text.replace('/',',')
@@ -145,7 +145,7 @@ def handleFileUpload():
     ['supply chain management', 'project planning', 'logistics management']]
 
 
-    f = open("/Users/malcolm/Desktop/uploads/resumes.txt", mode='r', encoding='utf-8')
+    f = open("/Users/malcolm/Desktop/FinalProjectEndToEnd/7thSemProject/uploads/resumes.txt", mode='r', encoding='utf-8')
     contents = f.read()
     contents = contents.replace('|', ',')
     contents = contents.replace(':', ',')
